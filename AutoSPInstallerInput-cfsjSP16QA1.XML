@@ -149,6 +149,7 @@
                 <ManagedPath relativeUrl="ComiteDirection" explicit="true"/>
                 <ManagedPath relativeUrl="DG" explicit="true"/>
                 <ManagedPath relativeUrl="CA" explicit="true"/>
+                <ManagedPath relativeUrl="MDD" explicit="true"/>
                 <ManagedPath relativeUrl="Recherche" explicit="true"/>
             </ManagedPaths>
             <SiteCollections>
