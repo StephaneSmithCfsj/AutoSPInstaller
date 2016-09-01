@@ -47,7 +47,7 @@
             <ClaimsToWindowsTokenService Start="false" UpdateAccount="false"/>
             <SMTP Install="false"/>
             <OutgoingEmail Configure="true">
-                <SMTPServer>cfsjexchange1.cfsj.qc.ca</SMTPServer>
+                <SMTPServer>DAG.cfsj.qc.ca</SMTPServer>
                 <EmailAddress>5022@cfsj.qc.ca</EmailAddress>
                 <ReplyToEmail></ReplyToEmail>
             </OutgoingEmail>

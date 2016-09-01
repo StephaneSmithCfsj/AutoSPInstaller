@@ -47,7 +47,7 @@
             <ClaimsToWindowsTokenService Start="false" UpdateAccount="false"/>
             <SMTP Install="false"/>
             <OutgoingEmail Configure="true">
-                <SMTPServer>cfsjexchange1.cfsj.qc.ca</SMTPServer>
+                <SMTPServer>DAG.cfsj.qc.ca</SMTPServer>
                 <EmailAddress>5022@cfsj.qc.ca</EmailAddress>
                 <ReplyToEmail></ReplyToEmail>
             </OutgoingEmail>
@@ -237,7 +237,6 @@
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-
                 <SiteCollection siteUrl="http://SP16Qa.cfsj.qc.ca/ServiceTechnique">
                     <Name>Service technique</Name>
                     <Description>Service technique</Description>
@@ -250,8 +249,6 @@
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-
-
                 <SiteCollection siteUrl="http://SP16Qa.cfsj.qc.ca/ServiceProjet">
                     <Name>Service projets</Name>
                     <Description>Service projets</Description>
