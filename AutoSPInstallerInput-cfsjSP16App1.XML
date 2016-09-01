@@ -107,7 +107,7 @@
         <WebApplication Name="Portal">
             <Type>Portal</Type>
             <ApplicationPool>Portal</ApplicationPool>
-            <Url>http://SP16.cfsj.qc.ca</Url>
+            <Url>http://Corpus.cfsj.qc.ca</Url>
             <Port>80</Port>
             <UseHostHeader>true</UseHostHeader>
             <AddURLToLocalIntranetZone>true</AddURLToLocalIntranetZone>
@@ -149,115 +149,113 @@
                 <ManagedPath relativeUrl="ComiteDirection" explicit="true"/>
                 <ManagedPath relativeUrl="DG" explicit="true"/>
                 <ManagedPath relativeUrl="CA" explicit="true"/>
+                <ManagedPath relativeUrl="MDD" explicit="true"/>
                 <ManagedPath relativeUrl="Recherche" explicit="true"/>
             </ManagedPaths>
             <SiteCollections>
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca">
                     <Name>Intranet</Name>
                     <Description>Accueil Intranet</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Intranet_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>true</Time24>
                 </SiteCollection>
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Corporation">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Corporation">
                     <Name>Corporation</Name>
                     <Description>Accueil Corporation</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Corporation_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Ressource">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Ressource">
                     <Name>Ressource</Name>
                     <Description>Accueil Ressource</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Ressource_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Evenement">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Evenement">
                     <Name>Evenement</Name>
                     <Description>Accueil Evenement</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Evenement_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Environement">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Environement">
                     <Name>Environement</Name>
                     <Description>Accueil Environement</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Environement_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Batiment">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Batiment">
                     <Name>Batiment</Name>
                     <Description>Accueil Batiment</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Batiment_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/EntretienMenager">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/EntretienMenager">
                     <Name>Entretien Ménager</Name>
                     <Description>Entretien Ménager</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>EntretienMenager_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ServiceTechnique">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/ServiceTechnique">
                     <Name>Service technique</Name>
                     <Description>Service technique</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>ServiceTechnique_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-
-
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ServiceProjet">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/ServiceProjet">
                     <Name>Service projets</Name>
                     <Description>Service projets</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>ServiceProjet_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -265,39 +263,39 @@
                 </SiteCollection>
 
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/rh">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/rh">
                     <Name>Ressources Humaines</Name>
                     <Description>Ressources Humaines</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>RH_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Securite">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Securite">
                     <Name>Securité</Name>
                     <Description>Securité</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Securite_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Approvisionnement">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Approvisionnement">
                     <Name>Approvisionnement</Name>
                     <Description>Approvisionnement</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Approvisionnement_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -305,65 +303,65 @@
                 </SiteCollection>
 
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/TI">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/TI">
                     <Name>Technologie de l'information</Name>
                     <Description>Technologie de l'information</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>TI_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ComiteSST">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/ComiteSST">
                     <Name>Comité SST</Name>
                     <Description>Comité SST</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>ComiteSST_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/EnergieEnvironnement">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/EnergieEnvironnement">
                     <Name>Énergie et Environnement</Name>
                     <Description>Énergie et Environnement</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>EnergieEnvironnement_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ComiteEnvironnement">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/ComiteEnvironnement">
                     <Name>Comité environnement</Name>
                     <Description>Comité Environnement</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>ComiteEnvironnement_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/MuseFSJ">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/MuseFSJ">
                     <Name>Musée du Fort Saint-Jean</Name>
                     <Description>Musée du Fort Saint-Jean</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>MuseFSJ_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -371,13 +369,13 @@
                 </SiteCollection>
 
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/AccueilHebergement">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/AccueilHebergement">
                     <Name>Accueil et hébergement</Name>
                     <Description>Accueil et hébergement</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>AccueilHebergement_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -386,52 +384,52 @@
 
 
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ServiceClientele">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/ServiceClientele">
                     <Name>Service à la clientèle</Name>
                     <Description>Service à la clientèle</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>ServiceClientele_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/OperationRestauration">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/OperationRestauration">
                     <Name>Opérations  restauration</Name>
                     <Description>Opérations  restauration</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>OperationRestauration_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/QA">
+               <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/QA">
                     <Name>Assurance qualité</Name>
                     <Description>Assurance qualité</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>QA_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Finances">
+               <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Finances">
                     <Name>Finances</Name>
                     <Description>Finances</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Finances_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -440,13 +438,13 @@
 
 
 
-               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/DocArchive">
+               <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/DocArchive">
                     <Name>Finances</Name>
                     <Description>Finances</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>DocArchive_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -454,26 +452,26 @@
                 </SiteCollection>
 
 
-               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ComiteDirection">
+               <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/ComiteDirection">
                     <Name>Comité de direction</Name>
                     <Description>Comité de direction</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>ComiteDirection_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/DG">
+               <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/DG">
                     <Name>Direction générale</Name>
                     <Description>Direction générale</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>DG_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -481,26 +479,26 @@
                 </SiteCollection>
 
 
-               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/CA">
+               <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/CA">
                     <Name>Conseil d'administration</Name>
                     <Description>Conseil d'administration</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>CA_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>STS#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
 
-                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Recherche">
+                <SiteCollection siteUrl="http://Corpus.cfsj.qc.ca/Recherche">
                     <Name>Recherche</Name>
                     <Description>Accueil Recherche</Description>
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>cfsj\SP16_Admin</Owner>
                     <CustomDatabase>Intranet_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>SRCHCEN#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -539,7 +537,7 @@
                     <HostNamedSiteCollection>false</HostNamedSiteCollection>
                     <Owner>CFSJ\SP16_Admin</Owner>
                     <CustomDatabase>MonSocial_Content</CustomDatabase>
-                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <SearchUrl>http://Corpus.cfsj.qc.ca/recherche</SearchUrl>
                     <Template>SPSMSITEHOST#0</Template>
                     <LCID>1036</LCID>
                     <Locale>fr-ca</Locale>
@@ -622,7 +620,7 @@
                         <Partitioned>false</Partitioned>
                         <ProxyGroup>Default</ProxyGroup>
                     </Proxy>
-                    <SearchCenterUrl>http://SP16.cfsj.qc.ca/recherche</SearchCenterUrl>
+                    <SearchCenterUrl>http://Corpus.cfsj.qc.ca/recherche</SearchCenterUrl>
                 </EnterpriseSearchServiceApplication>
             </EnterpriseSearchServiceApplications>
         </EnterpriseSearchService>
