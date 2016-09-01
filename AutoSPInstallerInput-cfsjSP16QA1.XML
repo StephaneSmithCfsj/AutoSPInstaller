@@ -261,8 +261,6 @@
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-
-
                 <SiteCollection siteUrl="http://SP16Qa.cfsj.qc.ca/rh">
                     <Name>Ressources Humaines</Name>
                     <Description>Ressources Humaines</Description>
@@ -301,8 +299,18 @@
                     <Locale>fr-ca</Locale>
                     <Time24>false</Time24>
                 </SiteCollection>
-
-
+                <SiteCollection siteUrl="http://SP16Qa.cfsj.qc.ca/MDD">
+                    <Name>Technologie de l'information</Name>
+                    <Description>Technologie de l'information</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>MDD_Content</CustomDatabase>
+                    <SearchUrl>http://SP16QA.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
                 <SiteCollection siteUrl="http://SP16Qa.cfsj.qc.ca/TI">
                     <Name>Technologie de l'information</Name>
                     <Description>Technologie de l'information</Description>
