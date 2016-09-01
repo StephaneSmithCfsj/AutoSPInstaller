@@ -1,0 +1,730 @@
+﻿<Configuration Environment="CFSJSP16QA" Version="3.99.51">
+    <Install SPVersion="2016">
+        <ConfigFile>config-AutoSPInstaller.xml</ConfigFile>
+        <InstallDir>E:\Microsoft Office Servers\</InstallDir>
+        <DataDir>E:\Microsoft Office Servers\</DataDir>
+        <PIDKey>NQGJR-63HC8-XCRQH-MYVCH-3J3QR</PIDKey>
+        <SKU>Enterprise</SKU>
+        <OfflineInstall>false</OfflineInstall>
+        <PauseAfterInstall>false</PauseAfterInstall>
+        <RemoteInstall Enable="false">
+            <ParallelInstall>false</ParallelInstall>
+        </RemoteInstall>
+        <AutoAdminLogon Enable="false">
+            <Password></Password>
+        </AutoAdminLogon>
+        <Disable>
+            <LoopbackCheck>true</LoopbackCheck>
+            <UnusedServices>true</UnusedServices>
+            <IEEnhancedSecurity>true</IEEnhancedSecurity>
+            <CertificateRevocationListCheck>false</CertificateRevocationListCheck>
+        </Disable>
+    </Install>
+    <Farm>
+        <Passphrase>!Corporation du for st-Jean!</Passphrase>
+        <Account>
+            <AddToLocalAdminsDuringSetup>true</AddToLocalAdminsDuringSetup>
+            <LeaveInLocalAdmins>false</LeaveInLocalAdmins>
+            <Username>CFSJ\SP16_Farm</Username>
+            <Password>Cf5j5p16!</Password>
+        </Account>
+        <CentralAdmin Provision="CFSJSP16APP1">
+            <Database>Content_CentralAdmin</Database>
+            <Port>2016</Port>
+            <UseSSL>false</UseSSL>
+        </CentralAdmin>
+        <Database>
+            <DBServer>CSFJSQLSP</DBServer>
+            <DBAlias Create="true">
+                <DBInstance>CfsjSQL5\sp16</DBInstance>
+                <DBPort></DBPort>
+            </DBAlias>
+            <DBPrefix>CFSJ_SP16</DBPrefix>
+            <ConfigDB>Config</ConfigDB>
+        </Database>
+        <Services>
+            <SandboxedCodeService Start="false"/>
+            <ClaimsToWindowsTokenService Start="false" UpdateAccount="false"/>
+            <SMTP Install="false"/>
+            <OutgoingEmail Configure="true">
+                <SMTPServer>DAG.cfsj.qc.ca</SMTPServer>
+                <EmailAddress>5022@cfsj.qc.ca</EmailAddress>
+                <ReplyToEmail></ReplyToEmail>
+            </OutgoingEmail>
+            <IncomingEmail Start="false"/>
+            <DistributedCache Start="CFSJSP16WFE1"/>
+            <WorkflowTimer Start="CFSJSP16APP1"/>
+            <FoundationWebApplication Start="CFSJSP16WFE1"/>
+        </Services>
+        <ServerRoles>
+            <Custom Provision="CFSJSP16APP1"/>
+            <WebFrontEnd Provision="CFSJSP16WFE1"/>
+            <SingleServerFarm Provision="false"/>
+            <Search Provision="CFSJSP16APP2"/>
+            <Application Provision="false"/>
+            <DistributedCache Provision="false"/>
+        </ServerRoles>
+        <ManagedAccounts>
+            <ManagedAccount CommonName="spservice">
+                <Username>cfsj\SP16_Services</Username>
+                <Password>Cf5j5p16!</Password>
+            </ManagedAccount>
+            <ManagedAccount CommonName="Portal">
+                <Username>cfsj\SP16_Pool</Username>
+                <Password>Cf5j5p16!</Password>
+            </ManagedAccount>
+            <ManagedAccount CommonName="MySiteHost">
+                <Username>cfsj\SP16_MySitePool</Username>
+                <Password>Cf5j5p16!</Password>
+            </ManagedAccount>
+            <ManagedAccount CommonName="SearchService">
+                <Username>cfsj\SP16_Search</Username>
+                <Password>Cf5j5p16!</Password>
+            </ManagedAccount>
+        </ManagedAccounts>
+        <ObjectCacheAccounts>
+            <SuperUser>cfsj\SP16_CacheUser</SuperUser>
+            <SuperReader>cfsj\SP16_CacheReader</SuperReader>
+        </ObjectCacheAccounts>
+        <Logging>
+            <IISLogs Compress="true">
+                <Path>i:\SP16\IISLOGS</Path>
+            </IISLogs>
+            <ULSLogs Compress="true">
+                <LogLocation>i:\SP16\ULSLOGS</LogLocation>
+                <LogDiskSpaceUsageGB></LogDiskSpaceUsageGB>
+                <DaysToKeepLogs></DaysToKeepLogs>
+                <LogCutInterval></LogCutInterval>
+            </ULSLogs>
+            <UsageLogs Compress="true">
+                <UsageLogDir>i:\SP16\UsageLogs</UsageLogDir>
+                <UsageLogMaxSpaceGB></UsageLogMaxSpaceGB>
+                <UsageLogCutTime></UsageLogCutTime>
+            </UsageLogs>
+        </Logging>
+    </Farm>
+    <WebApplications AddURLsToHOSTS="true">
+        <WebApplication Name="Portal">
+            <Type>Portal</Type>
+            <ApplicationPool>Portal</ApplicationPool>
+            <Url>http://SP16.cfsj.qc.ca</Url>
+            <Port>80</Port>
+            <UseHostHeader>true</UseHostHeader>
+            <AddURLToLocalIntranetZone>true</AddURLToLocalIntranetZone>
+            <GrantCurrentUserFullControl>true</GrantCurrentUserFullControl>
+            <UseClaims>true</UseClaims>
+            <UseBasicAuthentication>false</UseBasicAuthentication>
+            <UseOnlineWebPartCatalog>false</UseOnlineWebPartCatalog>
+            <Database>
+                <Name>Content_Portal</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+            <ManagedPaths>
+                <ManagedPath relativeUrl="help" explicit="true"/>
+                <ManagedPath relativeUrl="Corporation" explicit="true"/>
+                <ManagedPath relativeUrl="Ressource" explicit="true"/>
+                <ManagedPath relativeUrl="Evenement" explicit="true"/>
+                <ManagedPath relativeUrl="Environement" explicit="true"/>
+                <ManagedPath relativeUrl="EntretienMenager" explicit="true"/>
+                <ManagedPath relativeUrl="ServiceTechnique" explicit="true"/>
+                <ManagedPath relativeUrl="ServiceProjet" explicit="true"/>
+                <ManagedPath relativeUrl="RH" explicit="true"/>
+                <ManagedPath relativeUrl="Securite" explicit="true"/>
+                <ManagedPath relativeUrl="Approvisionnement" explicit="true"/>
+                <ManagedPath relativeUrl="TI" explicit="true"/>
+                <ManagedPath relativeUrl="ComiteSST" explicit="true"/>
+                <ManagedPath relativeUrl="EnergieEnvironnement" explicit="true"/>
+                <ManagedPath relativeUrl="ComiteEnvironnement" explicit="true"/>
+                <ManagedPath relativeUrl="MuseFSJ" explicit="true"/>
+                <ManagedPath relativeUrl="AccueilHebergement" explicit="true"/>
+                <ManagedPath relativeUrl="ServiceClientele" explicit="true"/>
+                <ManagedPath relativeUrl="OperationRestauration" explicit="true"/>
+                <ManagedPath relativeUrl="QA" explicit="true"/>
+                <ManagedPath relativeUrl="Finances" explicit="true"/>
+                <ManagedPath relativeUrl="DocArchive" explicit="true"/>
+                <ManagedPath relativeUrl="ComiteDirection" explicit="true"/>
+                <ManagedPath relativeUrl="DG" explicit="true"/>
+                <ManagedPath relativeUrl="CA" explicit="true"/>
+                <ManagedPath relativeUrl="Recherche" explicit="true"/>
+            </ManagedPaths>
+            <SiteCollections>
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca">
+                    <Name>Intranet</Name>
+                    <Description>Accueil Intranet</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Intranet_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>true</Time24>
+                </SiteCollection>
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Corporation">
+                    <Name>Corporation</Name>
+                    <Description>Accueil Corporation</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Corporation_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Ressource">
+                    <Name>Ressource</Name>
+                    <Description>Accueil Ressource</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Ressource_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Evenement">
+                    <Name>Evenement</Name>
+                    <Description>Accueil Evenement</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Evenement_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Environement">
+                    <Name>Environement</Name>
+                    <Description>Accueil Environement</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Environement_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Batiment">
+                    <Name>Batiment</Name>
+                    <Description>Accueil Batiment</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Batiment_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/EntretienMenager">
+                    <Name>Entretien Ménager</Name>
+                    <Description>Entretien Ménager</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>EntretienMenager_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ServiceTechnique">
+                    <Name>Service technique</Name>
+                    <Description>Service technique</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>ServiceTechnique_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ServiceProjet">
+                    <Name>Service projets</Name>
+                    <Description>Service projets</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>ServiceProjet_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/rh">
+                    <Name>Ressources Humaines</Name>
+                    <Description>Ressources Humaines</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>RH_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Securite">
+                    <Name>Securité</Name>
+                    <Description>Securité</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Securite_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Approvisionnement">
+                    <Name>Approvisionnement</Name>
+                    <Description>Approvisionnement</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Approvisionnement_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/TI">
+                    <Name>Technologie de l'information</Name>
+                    <Description>Technologie de l'information</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>TI_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ComiteSST">
+                    <Name>Comité SST</Name>
+                    <Description>Comité SST</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>ComiteSST_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/EnergieEnvironnement">
+                    <Name>Énergie et Environnement</Name>
+                    <Description>Énergie et Environnement</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>EnergieEnvironnement_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ComiteEnvironnement">
+                    <Name>Comité environnement</Name>
+                    <Description>Comité Environnement</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>ComiteEnvironnement_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/MuseFSJ">
+                    <Name>Musée du Fort Saint-Jean</Name>
+                    <Description>Musée du Fort Saint-Jean</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>MuseFSJ_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/AccueilHebergement">
+                    <Name>Accueil et hébergement</Name>
+                    <Description>Accueil et hébergement</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>AccueilHebergement_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ServiceClientele">
+                    <Name>Service à la clientèle</Name>
+                    <Description>Service à la clientèle</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>ServiceClientele_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/OperationRestauration">
+                    <Name>Opérations  restauration</Name>
+                    <Description>Opérations  restauration</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>OperationRestauration_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/QA">
+                    <Name>Assurance qualité</Name>
+                    <Description>Assurance qualité</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>QA_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Finances">
+                    <Name>Finances</Name>
+                    <Description>Finances</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Finances_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+
+               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/DocArchive">
+                    <Name>Finances</Name>
+                    <Description>Finances</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>DocArchive_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/ComiteDirection">
+                    <Name>Comité de direction</Name>
+                    <Description>Comité de direction</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>ComiteDirection_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/DG">
+                    <Name>Direction générale</Name>
+                    <Description>Direction générale</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>DG_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+
+               <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/CA">
+                    <Name>Conseil d'administration</Name>
+                    <Description>Conseil d'administration</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>CA_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>STS#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+                <SiteCollection siteUrl="http://SP16.cfsj.qc.ca/Recherche">
+                    <Name>Recherche</Name>
+                    <Description>Accueil Recherche</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>cfsj\SP16_Admin</Owner>
+                    <CustomDatabase>Intranet_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>SRCHCEN#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>false</Time24>
+                </SiteCollection>
+
+            </SiteCollections>            
+
+        </WebApplication>
+        <WebApplication Name="MySite">
+            <Type>MySiteHost</Type>
+            <ApplicationPool>MySite</ApplicationPool>
+            <Url>http://MonQASocial.cfsj.qc.ca</Url>
+            <Port>80</Port>
+            <UseHostHeader>true</UseHostHeader>
+            <AddURLToLocalIntranetZone>true</AddURLToLocalIntranetZone>
+            <GrantCurrentUserFullControl>true</GrantCurrentUserFullControl>
+            <UseClaims>true</UseClaims>
+            <UseBasicAuthentication>false</UseBasicAuthentication>
+            <UseOnlineWebPartCatalog>false</UseOnlineWebPartCatalog>
+            <Database>
+                <Name>Content_MySites</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+            <ManagedPaths>
+                <ManagedPath relativeUrl="Employe" explicit="false"/>
+            </ManagedPaths>
+            <SiteCollections>
+                <SiteCollection siteUrl="http://MonQASocial.cfsj.qc.ca">
+                    <Name>Mon Social</Name>
+                    <Description>Accueil Mon Social</Description>
+                    <HostNamedSiteCollection>false</HostNamedSiteCollection>
+                    <Owner>CFSJ\SP16_Admin</Owner>
+                    <CustomDatabase>MonSocial_Content</CustomDatabase>
+                    <SearchUrl>http://SP16.cfsj.qc.ca/recherche</SearchUrl>
+                    <Template>SPSMSITEHOST#0</Template>
+                    <LCID>1036</LCID>
+                    <Locale>fr-ca</Locale>
+                    <Time24>true</Time24>
+                </SiteCollection>
+            </SiteCollections>
+        </WebApplication>
+    </WebApplications>
+    <ServiceApps>
+        <ManagedMetadataServiceApp Provision="CFSJSP16APP1">
+            <Name>Managed Metadata Service</Name>
+            <ProxyName>Managed Metadata Service</ProxyName>
+            <Database>
+                <Name>Managed_Service</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </ManagedMetadataServiceApp>
+        <UserProfileServiceApp Provision="CFSJSP16APP1">
+            <Name>User Profile Service Application</Name>
+            <ProxyName>User Profile Service Application</ProxyName>
+            <MySiteHostLocation></MySiteHostLocation>
+            <MySiteManagedPath>Employe</MySiteManagedPath>
+            <EnableNetBIOSDomainNames>false</EnableNetBIOSDomainNames>
+            <StartProfileSync>true</StartProfileSync>
+            <CreateDefaultSyncConnection>false</CreateDefaultSyncConnection>
+            <SyncConnectionAccount>CFSJ\_SP_UPS</SyncConnectionAccount>
+            <SyncConnectionAccountPassword>Cf5j5ql!</SyncConnectionAccountPassword>
+            <Database>
+                <ProfileDB>Profile_Service</ProfileDB>
+                <SyncDB>Sync_Service</SyncDB>
+                <SocialDB>Social_Service</SocialDB>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </UserProfileServiceApp>
+        <EnterpriseSearchService Provision="CFSJSP16APP1">
+            <ContactEmail></ContactEmail>
+            <ConnectionTimeout>60</ConnectionTimeout>
+            <AcknowledgementTimeout>60</AcknowledgementTimeout>
+            <ProxyType>Default</ProxyType>
+            <IgnoreSSLWarnings>true</IgnoreSSLWarnings>
+            <InternetIdentity>Mozilla/4.0 (compatible; MSIE 4.01; Windows NT; MS Search 6.0 Robot)</InternetIdentity>
+            <CustomIndexLocation>i:\SP16_SearchIndex</CustomIndexLocation>
+            <PerformanceLevel>PartlyReduced</PerformanceLevel>
+            <ShareName>SearchIndex</ShareName>
+            <EnterpriseSearchServiceApplications>
+                <EnterpriseSearchServiceApplication Name="Search Service Application">
+                    <FailoverDatabaseServer></FailoverDatabaseServer>
+                    <Partitioned>false</Partitioned>
+                    <Partitions>1</Partitions>
+                    <SearchServiceApplicationType>Regular</SearchServiceApplicationType>
+                    <ContentAccessAccount>CFSJ\SP16_Crawl</ContentAccessAccount>
+                    <ContentAccessAccountPassword>Cf5j5p16!</ContentAccessAccountPassword>
+                    <Database>
+                        <Name>Search_Service</Name>
+                        <DBServer></DBServer>
+                        <DBAlias Create="false">
+                            <DBInstance></DBInstance>
+                            <DBPort></DBPort>
+                        </DBAlias>
+                    </Database>
+                    <ApplicationPool Name="SharePoint Search Application Pool"/>
+                    <CrawlComponent Provision="CFSJSP16APP1"/>
+                    <QueryComponent Provision="CFSJSP16APP1"/>
+                    <SearchQueryAndSiteSettingsComponent Provision="CFSJSP16APP1"/>
+                    <AdminComponent Provision="CFSJSP16APP1">
+                        <ApplicationPool Name="SharePoint Search Application Pool"/>
+                    </AdminComponent>
+                    <IndexComponent Provision="CFSJSP16APP1"/>
+                    <ContentProcessingComponent Provision="CFSJSP16APP1"/>
+                    <AnalyticsProcessingComponent Provision="CFSJSP16APP1"/>
+                    <Proxy Name="Search Service Application">
+                        <Partitioned>false</Partitioned>
+                        <ProxyGroup>Default</ProxyGroup>
+                    </Proxy>
+                    <SearchCenterUrl>http://SP16.cfsj.qc.ca/recherche</SearchCenterUrl>
+                </EnterpriseSearchServiceApplication>
+            </EnterpriseSearchServiceApplications>
+        </EnterpriseSearchService>
+        <StateService Provision="CFSJSP16APP1">
+            <Name>State Service</Name>
+            <ProxyName>State Service</ProxyName>
+            <Database>
+                <Name>State_Service</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </StateService>
+        <WebAnalyticsService Provision="CFSJSP16APP1">
+            <Name>Web Analytics Service Application</Name>
+            <Database>
+                <ReportingDB>WebAnalyticsReporting_Service</ReportingDB>
+                <StagingDB>WebAnalyticsStaging_Service</StagingDB>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </WebAnalyticsService>
+        <SPUsageService Provision="CFSJSP16WFE1,CFSJSP16APP1,CFSJSP16APP1">
+            <Name>Usage and Health Data Collection</Name>
+            <Database>
+                <Name>UsageAndHealth_Service</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </SPUsageService>
+        <SecureStoreService Provision="CFSJSP16APP1">
+            <Name>Secure Store Service</Name>
+            <ProxyName>Secure Store Service</ProxyName>
+            <Database>
+                <Name>SecureStore_Service</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </SecureStoreService>
+        <BusinessDataConnectivity Provision="CFSJSP16APP1">
+            <Name>Business Data Connectivity Service</Name>
+            <ProxyName>Business Data Connectivity Service</ProxyName>
+            <Database>
+                <Name>BusinessDataConnectivity_Service</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </BusinessDataConnectivity>
+        <AppManagementService Provision="CFSJSP16APP1">
+            <Name>App Management Service</Name>
+            <ProxyName>App Management Service</ProxyName>
+            <AppDomain>apps.Sp16.cfsj.qc.ca</AppDomain>
+            <Database>
+                <Name>AppManagement_Service</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </AppManagementService>
+        <SubscriptionSettingsService Provision="CFSJSP16APP1">
+            <Name>Subscription Settings Service</Name>
+            <AppSiteSubscriptionName>app</AppSiteSubscriptionName>
+            <Database>
+                <Name>SubscriptionSettings_Service</Name>
+                <DBServer></DBServer>
+                <DBAlias Create="false">
+                    <DBInstance></DBInstance>
+                    <DBPort></DBPort>
+                </DBAlias>
+            </Database>
+        </SubscriptionSettingsService>
+        <WorkManagementService Provision="CFSJSP16APP1">
+            <Name>Work Management Service Application</Name>
+            <ProxyName>Work Management Service Application</ProxyName>
+        </WorkManagementService>
+    </ServiceApps>
+    <EnterpriseServiceApps>
+        <ExcelServices Provision="true">
+            <Name>Excel Services Application</Name>
+            <UnattendedIDUser>CFSJ\SP16_Services</UnattendedIDUser>
+            <UnattendedIDPassword>Cf5j5p16!</UnattendedIDPassword>
+        </ExcelServices>
+    </EnterpriseServiceApps>
+    <AdobePDF>
+        <iFilter Install="true"/>
+        <Icon Configure="true"/>
+        <MIMEType Configure="true"/>
+    </AdobePDF>
+</Configuration>
