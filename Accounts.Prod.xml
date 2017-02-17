@@ -3,70 +3,70 @@
     <FirstName>SharePoint</FirstName> 
 	<LastName>Farm</LastName> 
 	<UserName>SP16_Farm</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>The server farm account is used to perform the following tasks: - Configure and manage the server farm. - Act as the application pool identity for the SharePoint Central Administration Web site. - Run the Microsoft SharePoint Foundation Workflow Timer Service</Description>
   </User>
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Admin</LastName> 
 	<UserName>SP16_Admin</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>The server farm account is used to perform the following tasks: - Administrative tasks</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Install</LastName> 
 	<UserName>SP16_Install</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>The server farm account is used to perform the following tasks: - Setup -SharePoint Products Configuration Wizard</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Application Pool</LastName> 
 	<UserName>SP16_Pool</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>The Pool account is used to run the Web Application Pool</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>MySite Application Pool</LastName> 
 	<UserName>SP16_MySitePool</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>The Pool account is used to run the MySite Web Application Pool</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Services</LastName> 
 	<UserName>SP16_Services</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>The Services Account is used to run the Service Application Pool</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Search Content</LastName> 
 	<UserName>SP16_Crawl</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>The Default Content Access Account for the Search Service Application</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Search Service</LastName> 
 	<UserName>SP16_Search</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>Service Account to run the SharePoint Search 'Windows Service'</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Cache Super User</LastName> 
 	<UserName>SP16_CacheUser</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>Cache Account</Description>
   </User> 
   <User> 
     <FirstName>SharePoint</FirstName> 
 	<LastName>Cache Super Reader</LastName> 
 	<UserName>SP16_CacheReader</UserName> 
-	<Password>Cf5j5p16!</Password>
+	<Password>!</Password>
 	<Description>Cache Account</Description>
   </User> 
 </ServiceAccounts>
